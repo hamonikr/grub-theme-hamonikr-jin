@@ -2,7 +2,7 @@
 set -e
 ROOT_UID=0
 THEME_DIR="/boot/grub/themes"
-THEME_NAME=hamonikr
+THEME_NAME=hamonikr-jin
 
 # Check command avalibility
 function has_command() {
