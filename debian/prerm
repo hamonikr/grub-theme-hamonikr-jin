@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+# Check command avalibility
+function has_command() {
+  command -v $1 > /dev/null
+}
+
+# remove theme setting
+sed -i.bak "s/^GRUB_GFXMODE.*/#GRUB_GFXMODE=/g" /etc/default/grub >/dev/null 2>&1
+sed -i.bak '/GRUB_THEME=/d' /etc/default/grub >/dev/null 2>&1
+
+if [[ -f "/etc/hamonikr/info" ]] ; then  
+  echo "Found HamoniKR OS Infomation"
+  sed -i '/GRUB_DISTRIBUTOR=/d' /etc/default/grub >/dev/null 2>&1
+  echo "GRUB_DISTRIBUTOR=\`lsb_release -i -s 2> /dev/null || echo Debian\`" | tee -a /etc/default/grub >/dev/null 2>&1
+fi
+
+# Update grub config
+echo -e "Updating grub config..."
+if has_command update-grub; then
+    update-grub
+elif has_command grub-mkconfig; then
+    grub-mkconfig -o /boot/grub/grub.cfg
+fi    
+exit 0

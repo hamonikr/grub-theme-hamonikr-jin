@@ -1,0 +1,14 @@
+Source: grub-theme-hamonikr-jin
+Section: utils
+Priority: optional
+Maintainer: Kevin Kim <root@hamonikr.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: grub-theme-hamonikr-jin
+Architecture: all
+Depends: grub2-common,
+         ${misc:Depends},
+Replaces: grub-common         
+Description: Grub2 Theme for HamoniKR
+ 하모니카 리눅스의 부트로더용 테마

@@ -1,0 +1,44 @@
+#!/bin/bash
+set -e
+ROOT_UID=0
+THEME_DIR="/boot/grub/themes"
+THEME_NAME=hamonikr
+
+# Check command avalibility
+function has_command() {
+  command -v $1 > /dev/null
+}
+echo -e "\n\t*****************************\n\t*  ${THEME_NAME} - Grub2 Theme  *\n\t*****************************"
+
+# https://en.wikipedia.org/wiki/Display_resolution
+RES=`xrandr --current | grep "*" | head -n 1 | awk -F" " '{print $1}'`
+sed -i.bak "s/.*GRUB_GFXMODE.*/GRUB_GFXMODE=${RES}/g" /etc/default/grub
+
+# for hamonikr os  
+if [[ -f "/etc/hamonikr/info" ]] ; then
+  echo "Found HamoniKR OS Infomation"
+  OSNAME=`sed -n '/GRUB_TITLE=/p' /etc/hamonikr/info | tr -d 'GRUB_TITLE='` >/dev/null 2>&1
+  sed -i '/GRUB_DISTRIBUTOR=/d' /etc/default/grub >/dev/null 2>&1
+  echo "GRUB_DISTRIBUTOR=\"${OSNAME}\"" >> /etc/default/grub 
+fi  
+
+# Set theme
+echo -e "Setting ${THEME_NAME} as default..."
+grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null && sed -i '/GRUB_THEME=/d' /etc/default/grub
+sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub >/dev/null 2>&1
+echo "GRUB_TIMEOUT=5" >> /etc/default/grub 
+[[ -d /boot/grub ]] && echo "GRUB_THEME=\"${THEME_DIR}/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
+
+# Update grub config
+echo -e "Updating grub config..."
+if has_command update-grub; then
+    update-grub
+elif has_command grub-mkconfig; then
+    grub-mkconfig -o /boot/grub/grub.cfg
+fi    
+
+/usr/bin/hamonikr-system-start || true
+
+# Success message
+echo -e "\n\t*****************************\n\t*  Installation complete.  *\n\t*****************************"    
+exit 0
