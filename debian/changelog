@@ -1,3 +1,10 @@
+grub-theme-hamonikr-jin (1.0.1) jin; urgency=medium
+
+  * Updated boot/grub/themes/hamonikr-jin/theme.txt
+   - Changed terminal font
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 02 Nov 2020 16:21:24 +0900
+
 grub-theme-hamonikr-jin (1.0.0) jin; urgency=medium
 
   * Initial release

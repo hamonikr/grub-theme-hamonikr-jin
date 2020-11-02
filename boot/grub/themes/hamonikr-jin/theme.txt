@@ -16,7 +16,7 @@
 title-text: ""
 desktop-image: "background.png"
 desktop-color: "#000000"
-terminal-font: "DejaVu Sans Regular 13"
+terminal-font: "Unifont Regular 16"
 terminal-left: "0"
 terminal-top: "0"
 terminal-width: "100%"
