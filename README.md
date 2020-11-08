@@ -10,6 +10,13 @@
  * 와이드 스크린의 경우 자동으로 비율을 계산
  * 한글 폰트로 grub 테마 제작
 
+## include fonts 
+ - Source Han Sans K Regular 16
+ - DejaVu Sans Regular 16
+ - Droid Sans Mono Regular 16
+ - NanumSquare Regular 16
+ - NanumGothicCoding Regular 16
+
 # License
  * GPL v3
 

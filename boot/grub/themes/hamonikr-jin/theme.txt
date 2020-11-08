@@ -16,7 +16,7 @@
 title-text: ""
 desktop-image: "background.png"
 desktop-color: "#000000"
-terminal-font: "Monaco Regular 16"
+terminal-font: "Unifont Regular 16"
 terminal-left: "0"
 terminal-top: "0"
 terminal-width: "100%"
@@ -31,7 +31,7 @@ terminal-border: "0"
     width = 100%
     align = "center"
     color = "#ddd"
-	font = "Monaco Regular 16"
+	font = "NanumSquare Regular 16"
 }
 
 + boot_menu {
@@ -41,10 +41,10 @@ terminal-border: "0"
     height = 70%
     icon_width = 25
     icon_height = 25
-	item_font = "Monaco Regular 16"
+	item_font = "NanumSquare Regular 16"
     item_icon_space = 7
-    item_height = 30
-    item_spacing = 5
+    item_height = 35
+    item_spacing = 10
     item_color = "#ddd"
     item_pixmap_style = "item_*.png"
     selected_item_color = "#fff"
