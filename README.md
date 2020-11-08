@@ -25,20 +25,10 @@
  * 위 명령어의 결과가 hidden 으로 되어 있는 경우 grub 화면이 숨겨져서 보이지 않습니다.
  * ```#GRUB_TIMEOUT_STYLE=hidden``` 처럼 해당 줄의 맨 앞에 '#' 표시를 추가하고 저장 후 ```sudo update-grub``` 으로 grub 이미지를 재생성 후 시스템을 재시작하세요.
 
-# 테마 수정
- * 테마를 수정하려면 hamonikr/theme.txt 파일을 수정할 수 있습니다.
- * 기본 제공되는 폰트는 5종(16pt 3종, 24pt 2종) 입니다.
 
-## image specification
- * grub이 사용할 수 있는 이미지는 600x480 크기로 된 8bit 이하(256컬러)의 이미지 입니다. 
- * [https://help.ubuntu.com/community/Grub2/Displays](https://help.ubuntu.com/community/Grub2/Displays)
-
- * 다음과 같이 convert 명령어를 사용하면 쉽게 변환할 수 있습니다. (만약 convert 명령어가 없다면 apt 를 이용하여 ImageMagick 패키지를 설치)
-
-ref : [https://wiki.debian.org/Grub/SplashImage](https://wiki.debian.org/Grub/SplashImage)
-
+## How to create grub font
 ```
-convert background.jpg -resize 1920x1080 -colors 14 +dither output1.jpg 
+sudo grub-mkfont --output=/boot/grub/fonts/NanumGothicCoding.pf2 --size=32 ~/.local/share/fonts/NanumGothicCoding.ttf
 ```
 
  # 이슈 또는 버그

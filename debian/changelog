@@ -1,3 +1,11 @@
+grub-theme-hamonikr-jin (1.1.0) jin; urgency=medium
+
+  * Updated boot/grub/themes/hamonikr-jin/theme.txt
+   - Changed font setting and add new fonts
+   - NanumGothicCoding Regular 16
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 08 Nov 2020 16:22:21 +0900
+
 grub-theme-hamonikr-jin (1.0.1) jin; urgency=medium
 
   * Updated boot/grub/themes/hamonikr-jin/theme.txt
