@@ -1,3 +1,10 @@
+grub-theme-hamonikr-jin (1.2.0) jin; urgency=medium
+
+  * Change OS icons
+   - src https://www.gnome-look.org/p/1469512
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Jul 2021 18:42:47 +0900
+
 grub-theme-hamonikr-jin (1.1.0) jin; urgency=medium
 
   * Updated boot/grub/themes/hamonikr-jin/theme.txt
